@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Farmer Assistance | Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<body>
+
+    <div class="page">
+
+        <!-- LEFT SIDE -->
+        <div class="left-section">
+
+            <div class="brand">
+                <div class="logo">🌱</div>
+                <span>Smart<span>Farmer</span></span>
+            </div>
+
+            <div class="hero-content">
+
+                <p class="small-title">🌾 SMART AGRICULTURE</p>
+
+                <h1>
+                    Grow Smarter.<br>
+                    <span>Farm Better.</span>
+                </h1>
+
+                <p class="description">
+                    Your intelligent farming companion for better crops,
+                    smarter decisions and a more productive future.
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <div class="feature-icon">🌦️</div>
+                        <div>
+                            <h3>Smart Weather</h3>
+                            <p>Stay updated with weather conditions.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🌾</div>
+                        <div>
+                            <h3>Crop Assistance</h3>
+                            <p>Get intelligent crop recommendations.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💧</div>
+                        <div>
+                            <h3>Smart Irrigation</h3>
+                            <p>Optimize water usage for your crops.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Smart Farmer Assistance
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="right-section">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    🌱
+                </div>
+
+                <p class="welcome">WELCOME BACK 👋</p>
+
+                <h2>Farmer Login</h2>
+
+                <p class="login-description">
+                    Login to access your smart farming dashboard.
+                </p>
+
+
+<form action="/login" method="POST">
+                    <!-- USERNAME -->
+                    <div class="input-group">
+
+                        <label for="username">Username</label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">👤</span>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+
+                        <div class="password-label">
+
+                            <label for="password">Password</label>
+
+                            <a href="#">Forgot password?</a>
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                onclick="togglePassword()">
+                                👁️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+                    <div class="remember">
+
+                        <label>
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="login-btn">
+
+                        <span>Login</span>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <div class="signup">
+
+                    <p>
+                        New to Smart Farmer?
+                        <a href="#">Create an account</a>
+                    </p>
+
+                </div>
+
+
+                <div class="security">
+
+                    <span>🔐</span>
+
+                    <p>
+                        Your information is securely protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
+

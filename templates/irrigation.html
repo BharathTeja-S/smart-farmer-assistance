@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Irrigation | Smart Farmer</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f8f3;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header .icon {
+            font-size: 55px;
+        }
+
+        .header h1 {
+            color: #123d28;
+            margin: 10px 0;
+        }
+
+        .header p {
+            color: #6b7d73;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #163f2a;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #34443b;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 14px;
+            border: 1px solid #d4ded7;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #4caf50;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            margin-top: 30px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: #287d3c;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calculate-btn:hover {
+            background: #1f6330;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #287d3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media(max-width: 650px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="icon">
+            💧
+        </div>
+
+        <h1>
+            Smart Irrigation
+        </h1>
+
+        <p>
+            Welcome {{ username }} 👨‍🌾
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            🌱 Enter Your Field Details
+        </h2>
+
+        <form method="POST"
+              action="/irrigation-calculate">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Select Crop
+                    </label>
+
+                    <select name="crop" required>
+
+                        <option value="">
+                            Select Crop
+                        </option>
+
+                        <option value="Rice">
+                            🌾 Rice
+                        </option>
+
+                        <option value="Maize">
+                            🌽 Maize
+                        </option>
+
+                        <option value="Groundnut">
+                            🥜 Groundnut
+                        </option>
+
+                        <option value="Cotton">
+                            🌿 Cotton
+                        </option>
+
+                        <option value="Sugarcane">
+                            🌱 Sugarcane
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Field Area (acres)
+                    </label>
+
+                    <input
+                        type="number"
+                        name="area"
+                        step="0.1"
+                        min="0.1"
+                        placeholder="Example: 2"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Temperature (°C)
+                    </label>
+
+                    <input
+                        type="number"
+                        name="temperature"
+                        placeholder="Example: 32"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Soil Moisture (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        name="moisture"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 45"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="calculate-btn">
+
+                💧 Calculate Irrigation
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <a href="/dashboard"
+       class="back">
+
+        ← Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

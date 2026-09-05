@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Farmer Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<div class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            🌱
+        </div>
+
+        <div>
+            <h2>Smart<span>Farmer</span></h2>
+            <small>ASSISTANCE</small>
+        </div>
+
+    </div>
+
+
+    <div class="menu-title">
+        MAIN MENU
+    </div>
+
+
+    <a href="#dashboard" class="menu active">
+        <span>🏠</span>
+        Dashboard
+    </a>
+
+
+    <a href="#weather" class="menu">
+        <span>🌦️</span>
+        Weather
+    </a>
+
+
+    <a href="#crops" class="menu">
+        <span>🌾</span>
+        Crop Assistance
+    </a>
+
+
+    <a href="#irrigation" class="menu">
+        <span>💧</span>
+        Irrigation
+    </a>
+
+
+    <a href="#disease" class="menu">
+        <span>🐛</span>
+        Disease Detection
+    </a>
+
+
+    <a href="#market" class="menu">
+        <span>📈</span>
+        Market Prices
+    </a>
+
+
+    <div class="menu-title scheme-title">
+        FARMER SUPPORT
+    </div>
+
+
+    <a href="#schemes" class="menu">
+        <span>🏛️</span>
+        Government Schemes
+    </a>
+
+
+    <a href="#profile" class="menu">
+        <span>👨‍🌾</span>
+        My Profile
+    </a>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="#settings" class="menu">
+            <span>⚙️</span>
+            Settings
+        </a>
+
+
+        <a href="/logout" class="menu logout">
+            <span>🚪</span>
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="main">
+
+
+<!-- =====================================================
+     TOP NAVBAR
+===================================================== -->
+
+<header class="topbar">
+
+    <div>
+
+        <p class="date">
+            FRIDAY, AUGUST 7, 2026
+        </p>
+
+        <h1>
+            Good Evening, Farmer! 👋
+        </h1>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <button class="notification">
+            🔔
+            <span></span>
+        </button>
+
+
+        <div class="profile">
+
+            <div class="profile-img">
+                👨‍🌾
+            </div>
+
+            <div>
+
+                <strong>
+                    Farmer
+                </strong>
+
+                <small>
+                    Smart Farmer
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section id="dashboard">
+
+
+    <div class="welcome-card">
+
+        <div>
+
+            <p>
+                YOUR FARMING OVERVIEW
+            </p>
+
+
+            <h2>
+                Grow smarter with
+                <span>Smart Farmer 🌱</span>
+            </h2>
+
+
+            <p class="welcome-text">
+
+                Get personalized farming assistance,
+                weather updates, crop recommendations,
+                government schemes and market information
+                all in one place.
+
+            </p>
+
+
+            <a href="#schemes" class="primary-btn">
+
+                Explore Farming Assistance →
+
+            </a>
+
+        </div>
+
+
+        <div class="farmer-art">
+            🌾
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================= -->
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon weather-icon">
+                🌡️
+            </div>
+
+            <div>
+
+                <p>Temperature</p>
+
+                <h2>28°C</h2>
+
+                <span class="positive">
+                    ● Good weather
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💧
+            </div>
+
+            <div>
+
+                <p>Soil Moisture</p>
+
+                <h2>72%</h2>
+
+                <span class="positive">
+                    ● Healthy
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🌱
+            </div>
+
+            <div>
+
+                <p>Crop Health</p>
+
+                <h2>94%</h2>
+
+                <span class="positive">
+                    ● Excellent
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <p>Market Trend</p>
+
+                <h2>+8.4%</h2>
+
+                <span class="positive">
+                    ● Increasing
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WEATHER
+===================================================== -->
+
+<section id="weather" class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                WEATHER ASSISTANCE
+            </p>
+
+            <h2>
+                Today's Weather 🌦️
+            </h2>
+
+        </div>
+
+
+        <button class="outline-btn">
+            View Forecast →
+        </button>
+
+    </div>
+
+
+
+    <div class="weather-card">
+
+
+        <div class="current-weather">
+
+            <div class="weather-symbol">
+                ☀️
+            </div>
+
+            <div>
+
+                <h1>
+                    28°C
+                </h1>
+
+                <p>
+                    Partly Cloudy
+                </p>
+
+                <small>
+                    Chennai, Tamil Nadu
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="weather-details">
+
+            <div>
+                💧
+                <strong>68%</strong>
+                Humidity
+            </div>
+
+
+            <div>
+                💨
+                <strong>14 km/h</strong>
+                Wind
+            </div>
+
+
+            <div>
+                🌧️
+                <strong>20%</strong>
+                Rain
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CROP ASSISTANCE
+===================================================== -->
+
+<section id="crops" class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                CROP ASSISTANCE
+            </p>
+
+            <h2>
+                Recommended Crops 🌾
+            </h2>
+
+        </div>
+
+
+        <button class="outline-btn">
+            View All →
+        </button>
+
+    </div>
+
+
+
+    <div class="crop-grid">
+
+
+        <div class="crop-card">
+
+            <div class="crop-image rice">
+                🌾
+            </div>
+
+            <div class="crop-info">
+
+                <h3>
+                    Rice
+                </h3>
+
+                <p>
+                    Suitable for current soil
+                    and weather conditions.
+                </p>
+
+
+                <div class="crop-score">
+
+                    <span>
+                        Suitability
+                    </span>
+
+                    <strong>
+                        96%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div style="width:96%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="crop-card">
+
+            <div class="crop-image maize">
+                🌽
+            </div>
+
+            <div class="crop-info">
+
+                <h3>
+                    Maize
+                </h3>
+
+                <p>
+                    Good growth potential
+                    for this season.
+                </p>
+
+
+                <div class="crop-score">
+
+                    <span>
+                        Suitability
+                    </span>
+
+                    <strong>
+                        89%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div style="width:89%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="crop-card">
+
+            <div class="crop-image groundnut">
+                🥜
+            </div>
+
+            <div class="crop-info">
+
+                <h3>
+                    Groundnut
+                </h3>
+
+                <p>
+                    Recommended based on
+                    soil conditions.
+                </p>
+
+
+                <div class="crop-score">
+
+                    <span>
+                        Suitability
+                    </span>
+
+                    <strong>
+                        84%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div style="width:84%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SMART CROP FORM -->
+
+    <div class="crop-form">
+
+        <h2>
+            🌾 Smart Crop Assistance
+        </h2>
+
+
+        <p>
+            Enter your farming details to receive
+            a basic crop recommendation.
+        </p>
+
+
+        <form action="/crop-recommendation"
+              method="POST">
+
+
+            <label for="crop">
+                Select Crop
+            </label>
+
+
+            <select id="crop"
+                    name="crop"
+                    required>
+
+                <option value="">
+                    Select Crop
+                </option>
+
+                <option value="rice">
+                    Rice
+                </option>
+
+                <option value="wheat">
+                    Wheat
+                </option>
+
+                <option value="maize">
+                    Maize
+                </option>
+
+                <option value="tomato">
+                    Tomato
+                </option>
+
+                <option value="cotton">
+                    Cotton
+                </option>
+
+            </select>
+
+
+
+            <label for="soil">
+                Soil Type
+            </label>
+
+
+            <select id="soil"
+                    name="soil"
+                    required>
+
+                <option value="">
+                    Select Soil
+                </option>
+
+                <option value="sandy">
+                    Sandy
+                </option>
+
+                <option value="clay">
+                    Clay
+                </option>
+
+                <option value="loamy">
+                    Loamy
+                </option>
+
+            </select>
+
+
+
+            <label for="season">
+                Season
+            </label>
+
+
+            <select id="season"
+                    name="season"
+                    required>
+
+                <option value="">
+                    Select Season
+                </option>
+
+                <option value="kharif">
+                    Kharif
+                </option>
+
+                <option value="rabi">
+                    Rabi
+                </option>
+
+                <option value="zaid">
+                    Zaid
+                </option>
+
+            </select>
+
+
+
+            <label for="water">
+                Water Availability
+            </label>
+
+
+            <select id="water"
+                    name="water"
+                    required>
+
+                <option value="">
+                    Select Water Availability
+                </option>
+
+                <option value="low">
+                    Low
+                </option>
+
+                <option value="medium">
+                    Medium
+                </option>
+
+                <option value="high">
+                    High
+                </option>
+
+            </select>
+
+
+
+            <button type="submit">
+
+                🌱 Get Recommendation
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SMART IRRIGATION
+===================================================== -->
+
+<section id="irrigation"
+         class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                SMART IRRIGATION
+            </p>
+
+            <h2>
+                Irrigation Recommendation 💧
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="irrigation-card">
+
+
+        <div class="water-circle">
+
+            <div>
+
+                <strong>
+                    72%
+                </strong>
+
+                <span>
+                    Soil Moisture
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="irrigation-info">
+
+            <span class="status">
+                ● OPTIMAL
+            </span>
+
+
+            <h2>
+                Smart Irrigation Assistant
+            </h2>
+
+
+            <p>
+
+                Get a personalized irrigation
+                recommendation based on your crop,
+                field area, temperature and current
+                soil moisture.
+
+            </p>
+
+
+            <div class="irrigation-stats">
+
+                <span>
+                    🌱 Soil: Healthy
+                </span>
+
+                <span>
+                    💧 Save Water
+                </span>
+
+            </div>
+
+
+            <a href="/irrigation"
+               class="primary-btn"
+               style="display:inline-block;
+                      text-decoration:none;
+                      margin-top:20px;">
+
+                💧 Get Irrigation Recommendation →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISEASE DETECTION
+===================================================== -->
+
+<section id="disease"
+         class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                AI FARM ASSISTANCE
+            </p>
+
+            <h2>
+                Crop Disease Detection 🐛
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="disease-container">
+
+
+        <!-- LEFT -->
+
+        <div class="disease-upload-card">
+
+
+            <div class="disease-big-icon">
+                🔬
+            </div>
+
+
+            <h2>
+                Detect Crop Diseases Early
+            </h2>
+
+
+            <p>
+
+                Upload a clear image of your crop
+                and get an initial disease assessment.
+
+            </p>
+
+
+
+            <form id="diseaseForm"
+                  enctype="multipart/form-data">
+
+
+                <label for="cropImage" class="upload-box">
+
+    <input type="file"
+           id="cropImage"
+           name="crop_image"
+           accept="image/png, image/jpeg, image/jpg"
+           required>
+
+    <div class="upload-content">
+
+        <span class="upload-icon">
+            📷
+        </span>
+
+        <strong>
+            Click Here to Upload Crop Image
+        </strong>
+
+        <small>
+            JPG, JPEG or PNG
+        </small>
+
+    </div>
+
+</label>
+
+
+
+                <div id="imagePreview"
+                     class="image-preview">
+                </div>
+
+
+
+                <button type="submit"
+                        class="disease-btn">
+
+                    🔍 Analyze Crop
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="disease-result-card">
+
+
+            <div class="result-icon">
+                🌱
+            </div>
+
+
+            <p class="result-label">
+                AI ANALYSIS RESULT
+            </p>
+
+
+            <h2 id="diseaseName">
+                Ready for Analysis
+            </h2>
+
+
+            <p id="diseaseMessage">
+
+                Upload a crop image to receive
+                the disease assessment.
+
+            </p>
+
+
+
+            <div class="disease-info">
+
+
+                <div>
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <strong id="confidence">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Crop Health
+                    </span>
+
+                    <strong id="cropHealth">
+                        --
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="treatment-box">
+
+                <h3>
+                    🌿 Recommended Action
+                </h3>
+
+                <p id="treatment">
+
+                    Your recommendation will
+                    appear here after analysis.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MARKET PRICES
+===================================================== -->
+
+<section id="market"
+         class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                AGRICULTURE MARKET
+            </p>
+
+            <h2>
+                Today's Market Prices 📈
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="market-table">
+
+
+        <div class="market-header">
+
+            <span>
+                Crop
+            </span>
+
+            <span>
+                Market
+            </span>
+
+            <span>
+                Price
+            </span>
+
+            <span>
+                Trend
+            </span>
+
+        </div>
+
+
+
+        <div class="market-row">
+
+            <span>
+                🌾 Rice
+            </span>
+
+            <span>
+                Koyambedu
+            </span>
+
+            <strong>
+                ₹3,200 / q
+            </strong>
+
+            <b class="up">
+                ↑ 6.2%
+            </b>
+
+        </div>
+
+
+
+        <div class="market-row">
+
+            <span>
+                🌽 Maize
+            </span>
+
+            <span>
+                Chennai
+            </span>
+
+            <strong>
+                ₹2,450 / q
+            </strong>
+
+            <b class="up">
+                ↑ 4.8%
+            </b>
+
+        </div>
+
+
+
+        <div class="market-row">
+
+            <span>
+                🥜 Groundnut
+            </span>
+
+            <span>
+                Madurai
+            </span>
+
+            <strong>
+                ₹6,100 / q
+            </strong>
+
+            <b class="down">
+                ↓ 1.2%
+            </b>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GOVERNMENT SCHEMES
+===================================================== -->
+
+<section id="schemes"
+         class="dashboard-section schemes-section">
+
+
+    <div class="section-heading">
+
+
+        <div>
+
+            <p>
+                GOVERNMENT SUPPORT
+            </p>
+
+
+            <h2>
+                Government Schemes 🏛️
+            </h2>
+
+
+            <span>
+
+                Explore financial assistance and
+                support available for farmers.
+
+            </span>
+
+        </div>
+
+
+        <a href="https://www.myscheme.gov.in/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="outline-btn">
+
+            View All Schemes →
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =================================================
+         IMPORTANT: scheme-grid starts here
+    ================================================= -->
+
+    <div class="scheme-grid">
+
+
+        <!-- =================================================
+             PM KISAN
+        ================================================= -->
+
+        <div class="scheme-card featured">
+
+
+            <div class="scheme-top">
+
+                <div class="scheme-logo">
+                    🇮🇳
+                </div>
+
+                <span class="verified">
+                    ✓ Government Scheme
+                </span>
+
+            </div>
+
+
+            <h2>
+                PM-KISAN
+            </h2>
+
+
+            <p class="scheme-name">
+
+                Pradhan Mantri Kisan Samman Nidhi
+
+            </p>
+
+
+            <p class="scheme-description">
+
+                Income support scheme for eligible
+                landholding farmer families.
+
+            </p>
+
+
+            <div class="benefit">
+
+                <strong>
+                    ₹6,000
+                </strong>
+
+                <span>
+                    per year
+                </span>
+
+            </div>
+
+
+            <div class="installments">
+
+                <span>
+                    ₹2,000
+                </span>
+
+                <span>
+                    ₹2,000
+                </span>
+
+                <span>
+                    ₹2,000
+                </span>
+
+            </div>
+
+
+            <button class="scheme-btn"
+                    onclick="openScheme('pmkisan')">
+
+                Check Eligibility →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PMFBY
+        ================================================= -->
+
+        <div class="scheme-card">
+
+
+            <div class="scheme-top">
+
+                <div class="scheme-logo">
+                    🛡️
+                </div>
+
+                <span class="verified">
+                    ✓ Government Scheme
+                </span>
+
+            </div>
+
+
+            <h2>
+                PMFBY
+            </h2>
+
+
+            <p class="scheme-name">
+
+                Pradhan Mantri Fasal Bima Yojana
+
+            </p>
+
+
+            <p class="scheme-description">
+
+                Crop insurance support to help
+                farmers manage crop-loss risks.
+
+            </p>
+
+
+            <div class="scheme-benefit-text">
+
+                🛡️ Crop Insurance
+
+            </div>
+
+
+            <button class="scheme-btn"
+                    onclick="openScheme('pmfby')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             KCC
+        ================================================= -->
+
+        <div class="scheme-card">
+
+
+            <div class="scheme-top">
+
+                <div class="scheme-logo">
+                    💳
+                </div>
+
+                <span class="verified">
+                    ✓ Farmer Credit
+                </span>
+
+            </div>
+
+
+            <h2>
+                Kisan Credit Card
+            </h2>
+
+
+            <p class="scheme-name">
+                KCC
+            </p>
+
+
+            <p class="scheme-description">
+
+                Credit facility designed to help
+                farmers meet agricultural expenses.
+
+            </p>
+
+
+            <div class="scheme-benefit-text">
+
+                💳 Agricultural Credit
+
+            </div>
+
+
+            <button class="scheme-btn"
+                    onclick="openScheme('kcc')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MORE GOVERNMENT SCHEMES
+        ================================================= -->
+
+        <div class="scheme-card more-scheme">
+
+
+            <div class="scheme-top">
+
+                <div class="scheme-logo">
+                    📋
+                </div>
+
+            </div>
+
+
+            <h2>
+                More Schemes
+            </h2>
+
+
+            <p class="scheme-description">
+
+                Discover more government programs
+                and farmer support initiatives.
+
+            </p>
+
+
+            <!-- REAL WEBSITE LINK -->
+
+            <a href="https://www.myscheme.gov.in/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="scheme-btn">
+
+                Explore Schemes →
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+    <!-- 🔥 THIS CLOSING DIV WAS MISSING IN YOUR CODE -->
+
+</section>
+
+<!-- =====================================================
+     SETTINGS
+===================================================== -->
+
+<section id="settings" class="dashboard-section settings-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>ACCOUNT & PREFERENCES</p>
+
+            <h2>
+                Settings ⚙️
+            </h2>
+
+            <span>
+                Manage your Smart Farmer preferences and account.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="settings-grid">
+
+
+        <!-- ACCOUNT SETTINGS -->
+
+        <div class="settings-card">
+
+            <div class="settings-icon">
+                👤
+            </div>
+
+            <div class="settings-content">
+
+                <h3>
+                    Account
+                </h3>
+
+                <p>
+                    Manage your farmer account information.
+                </p>
+
+                <button
+                    type="button"
+                    class="settings-btn"
+                    onclick="showSettingMessage('Account settings are ready to edit.')">
+
+                    Manage Account →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NOTIFICATIONS -->
+
+        <div class="settings-card">
+
+            <div class="settings-icon">
+                🔔
+            </div>
+
+            <div class="settings-content">
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+                    Receive important farming alerts and updates.
+                </p>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="notificationToggle"
+                        checked
+                        onchange="toggleNotifications()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+                <span id="notificationStatus"
+                      class="setting-status">
+
+                    Notifications Enabled
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DARK MODE -->
+
+        <div class="settings-card">
+
+            <div class="settings-icon">
+                🌙
+            </div>
+
+            <div class="settings-content">
+
+                <h3>
+                    Appearance
+                </h3>
+
+                <p>
+                    Switch between light and dark appearance.
+                </p>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="darkModeToggle"
+                        onchange="toggleDarkMode()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+                <span id="themeStatus"
+                      class="setting-status">
+
+                    Light Mode
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LANGUAGE -->
+
+<div class="settings-card">
+
+    <div class="settings-icon">
+        🌐
+    </div>
+
+    <div class="settings-content">
+
+        <h3 data-i18n="language">
+            Language
+        </h3>
+
+        <p data-i18n="chooseLanguage">
+            Choose your preferred language.
+        </p>
+
+        <select id="languageSelect"
+                class="settings-select">
+
+            <option value="en">
+                English
+            </option>
+
+            <option value="ta">
+                தமிழ்
+            </option>
+
+            <option value="te">
+                తెలుగు
+            </option>
+
+            <option value="hi">
+                हिन्दी
+            </option>
+
+        </select>
+
+    </div>
+
+</div>        <!-- PASSWORD -->
+
+        <div class="settings-card">
+
+            <div class="settings-icon">
+                🔐
+            </div>
+
+            <div class="settings-content">
+
+                <h3>
+                    Security
+                </h3>
+
+                <p>
+                    Keep your Smart Farmer account secure.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="settings-btn"
+                    onclick="changePassword()">
+
+                    Change Password →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATA -->
+
+        <div class="settings-card">
+
+            <div class="settings-icon">
+                💾
+            </div>
+
+            <div class="settings-content">
+
+                <h3>
+                    Data & Privacy
+                </h3>
+
+                <p>
+                    Manage your farming information and privacy.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="settings-btn"
+                    onclick="showSettingMessage('Your data is protected by Smart Farmer.')">
+
+                    Privacy Information →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SETTINGS MESSAGE -->
+
+    <div id="settingsMessage"
+         class="settings-message">
+
+        <span id="settingsMessageText">
+        </span>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+<!-- =========================================
+     PROFILE
+========================================= -->
+
+<section id="profile" class="dashboard-section">
+
+    <div class="profile-card">
+
+        <div class="big-profile">
+            👨‍🌾
+        </div>
+
+        <div class="profile-details">
+
+            <p>FARMER PROFILE</p>
+
+            <h2 id="displayName">
+                Welcome, Farmer
+            </h2>
+
+            <span id="displayInfo">
+                Your personalized farming assistance is ready.
+            </span>
+
+        </div>
+
+        <button
+            class="outline-btn"
+            onclick="openProfile()">
+
+            ✏️ Manage Profile
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        🌱 Smart Farmer Assistance
+    </p>
+
+    <span>
+        Helping farmers make smarter decisions.
+    </span>
+
+</footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SCHEME POPUP
+===================================================== -->
+
+<div id="schemeModal"
+     class="modal">
+
+
+    <div class="modal-content">
+
+
+        <button class="close"
+                onclick="closeScheme()">
+
+            ×
+
+        </button>
+
+
+        <div id="schemeContent">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT / PROFILE MODAL
+===================================================== -->
+
+<div id="profileModal" class="profile-modal">
+
+    <div class="profile-modal-content">
+
+        <button
+            type="button"
+            class="profile-close"
+            onclick="closeProfile()">
+
+            ×
+
+        </button>
+
+
+        <div class="profile-modal-icon">
+            👨‍🌾
+        </div>
+
+
+        <h2>
+            Manage Your Profile
+        </h2>
+
+
+        <p class="profile-subtitle">
+            Update your farmer information
+        </p>
+
+
+        <form id="profileForm">
+
+            <label for="farmerName">
+                Farmer Name
+            </label>
+
+            <input
+                type="text"
+                id="farmerName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="farmerPhone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="farmerPhone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label for="farmerLocation">
+                Village / Location
+            </label>
+
+            <input
+                type="text"
+                id="farmerLocation"
+                placeholder="Enter your location"
+                required
+            >
+
+
+            <label for="farmerCrop">
+                Main Crop
+            </label>
+
+            <select id="farmerCrop">
+
+                <option value="Rice">
+                    Rice
+                </option>
+
+                <option value="Wheat">
+                    Wheat
+                </option>
+
+                <option value="Maize">
+                    Maize
+                </option>
+
+                <option value="Cotton">
+                    Cotton
+                </option>
+
+                <option value="Groundnut">
+                    Groundnut
+                </option>
+
+                <option value="Tomato">
+                    Tomato
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="save-profile-btn">
+
+                💾 Save Profile
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT FILES
+===================================================== -->
+
+<script src="{{ url_for('static', filename='language.js') }}"></script>
+
+<script src="{{ url_for('static', filename='disease.js') }}"></script>
+
+<script src="{{ url_for('static', filename='schemes.js') }}"></script>
+
+<script src="{{ url_for('static', filename='settings.js') }}"></script>
+
+<script src="{{ url_for('static', filename='profile.js') }}"></script>
+
+
+<!-- =====================================================
+     GOVERNMENT SCHEME MODAL
+===================================================== -->
+
+<div id="schemeModal" class="modal">
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            class="close"
+            onclick="closeScheme()">
+
+            ×
+
+        </button>
+
+
+        <div id="schemeContent">
+
+            <!-- Scheme information will appear here -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openProfile() {
+
+    const modal = document.getElementById("profileModal");
+
+    if (modal) {
+
+        modal.style.display = "flex";
+
+    } else {
+
+        alert("❌ Profile modal not found!");
+
+    }
+
+}
+
+
+function closeProfile() {
+
+    const modal = document.getElementById("profileModal");
+
+    if (modal) {
+
+        modal.style.display = "none";
+
+    }
+
+}
+
+</script>
+</body>
+
+</html>

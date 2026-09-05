@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }} | Smart Farmer Assistance</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eef8f0, #dff3e3);
+            color: #183b25;
+        }
+
+        .navbar {
+            background: #14532d;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .logout {
+            background: #ef4444;
+            padding: 9px 16px;
+            border-radius: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #166534;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #14532d;
+        }
+
+        .description {
+            font-size: 19px;
+            color: #64748b;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .welcome {
+            margin-top: 25px;
+            color: #166534;
+            font-weight: bold;
+        }
+
+        .coming {
+            margin-top: 35px;
+            padding: 20px;
+            background: #f0fdf4;
+            border-radius: 15px;
+            color: #166534;
+            font-weight: bold;
+        }
+
+        .dashboard-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .dashboard-btn:hover {
+            background: #15803d;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌱 SmartFarmer
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+        <a href="/dashboard" class="back">
+            ← Back to Dashboard
+        </a>
+
+
+        <div class="card">
+
+            <div class="icon">
+                {{ icon }}
+            </div>
+
+            <h1>
+                {{ title }}
+            </h1>
+
+            <p class="description">
+                {{ description }}
+            </p>
+
+            <p class="welcome">
+                Welcome, {{ username }} 👨‍🌾
+            </p>
+
+
+            <div class="coming">
+
+                🚀 This Smart Farmer feature is ready
+                for development.
+
+            </div>
+
+
+            <a href="/dashboard"
+               class="dashboard-btn">
+
+                ← Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

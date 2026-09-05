@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Crop Recommendation</title>
+
+</head>
+
+<body>
+
+    <h1>🌾 Smart Crop Recommendation</h1>
+
+    <h2>
+        Welcome {{ username }} 👨‍🌾
+    </h2>
+
+    <hr>
+
+    <h3>Crop Details</h3>
+
+    <p>
+        <strong>Crop:</strong>
+        {{ crop }}
+    </p>
+
+    <p>
+        <strong>Soil:</strong>
+        {{ soil }}
+    </p>
+
+    <p>
+        <strong>Season:</strong>
+        {{ season }}
+    </p>
+
+    <p>
+        <strong>Water Availability:</strong>
+        {{ water }}
+    </p>
+
+    <hr>
+
+    <h2>🌱 Recommendation</h2>
+
+    <p>
+        <strong>Fertilizer:</strong>
+        {{ recommendation.fertilizer }}
+    </p>
+
+    <p>
+        <strong>Irrigation:</strong>
+        {{ recommendation.irrigation }}
+    </p>
+
+    <p>
+        <strong>Advice:</strong>
+        {{ recommendation.advice }}
+    </p>
+
+    <p>
+        <strong>Soil Advice:</strong>
+        {{ recommendation.soil_advice }}
+    </p>
+
+    <p>
+        <strong>Water Advice:</strong>
+        {{ recommendation.water_advice }}
+    </p>
+
+    <br>
+
+    <a href="/dashboard#crops">
+        ← Back to Crop Assistance
+    </a>
+
+</body>
+
+</html>

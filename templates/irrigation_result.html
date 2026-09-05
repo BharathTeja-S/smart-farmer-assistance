@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Irrigation Recommendation</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f4;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            font-size: 60px;
+        }
+
+        h1 {
+            color: #1b5e20;
+            margin-top: 10px;
+        }
+
+        .welcome {
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .details {
+            background: #f5faf5;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .details p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .result {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            background: #e8f5e9;
+            margin-bottom: 25px;
+        }
+
+        .result h2 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+
+        .status {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .water {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+        .advice {
+            margin-top: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <div class="heading">
+
+        <div class="icon">
+            💧
+        </div>
+
+        <h1>
+            Smart Irrigation Result
+        </h1>
+
+        <p class="welcome">
+            Welcome {{ username }} 👨‍🌾
+        </p>
+
+    </div>
+
+
+    <!-- FARM DETAILS -->
+
+    <div class="details">
+
+        <h2>
+            🌱 Field Details
+        </h2>
+
+        <br>
+
+        <p>
+            <strong>Crop:</strong>
+            {{ crop }}
+        </p>
+
+        <p>
+            <strong>Field Area:</strong>
+            {{ area }} acres
+        </p>
+
+        <p>
+            <strong>Temperature:</strong>
+            {{ temperature }} °C
+        </p>
+
+        <p>
+            <strong>Soil Moisture:</strong>
+            {{ moisture }} %
+        </p>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div class="result">
+
+        <h2>
+            💧 Irrigation Recommendation
+        </h2>
+
+        <p class="status">
+            {{ status }}
+        </p>
+
+        <p>
+            Recommended Water
+        </p>
+
+        <p class="water">
+            {{ water }} Litres
+        </p>
+
+        <p class="advice">
+            {{ advice }}
+        </p>
+
+    </div>
+
+
+    <a
+        href="/dashboard#irrigation"
+        class="back">
+
+        ← Back to Smart Irrigation
+
+    </a>
+
+
+</div>
+
+</body>
+
+</html>
