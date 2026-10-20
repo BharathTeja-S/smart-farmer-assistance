@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Smart Farmer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .register-page { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #eef7ed; }
+        .register-card { width: min(440px, 100%); padding: 36px; background: #fff; border-radius: 18px; box-shadow: 0 18px 50px rgba(28, 73, 35, .12); }
+        .register-card h1 { margin: 0 0 8px; color: #245d2c; }
+        .register-card p { color: #69766c; }
+        .register-card label { display: block; margin: 18px 0 7px; font-weight: 600; color: #344238; }
+        .register-card input { width: 100%; box-sizing: border-box; padding: 13px; border: 1px solid #d4e1d4; border-radius: 9px; font: inherit; }
+        .register-card button { width: 100%; margin-top: 24px; padding: 14px; border: 0; border-radius: 9px; background: #3f9144; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+        .register-error { padding: 10px 12px; border-radius: 8px; background: #fff0ee; color: #a2372f; }
+        .register-card a { color: #3f9144; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main class="register-page">
+        <section class="register-card">
+            <div class="brand"><div class="logo">🌱</div><span>Smart<span>Farmer</span></span></div>
+            <h1>Create your account</h1>
+            <p>Save your access and start using smart farming tools.</p>
+            {% if error %}<div class="register-error">{{ error }}</div>{% endif %}
+            <form action="{{ url_for('register') }}" method="post">
+                <label for="username">Username</label>
+                <input id="username" name="username" minlength="3" required autocomplete="username">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" minlength="6" required autocomplete="new-password">
+                <label for="confirm_password">Confirm password</label>
+                <input id="confirm_password" name="confirm_password" type="password" minlength="6" required autocomplete="new-password">
+                <button type="submit">Create account</button>
+            </form>
+            <p>Already registered? <a href="{{ url_for('home') }}">Back to login</a></p>
+        </section>
+    </main>
+</body>
+</html>

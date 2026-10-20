@@ -131,13 +131,13 @@
 
     <div>
 
-        <p class="date">
-            FRIDAY, AUGUST 7, 2026
-        </p>
+      <p class="date" id="currentDate">
+    Loading date...
+</p>
 
-        <h1>
-            Good Evening, Farmer! 👋
-        </h1>
+        <h1 id="topGreeting">
+    Good Evening, Farmer! 👋
+</h1>
 
     </div>
 
@@ -329,52 +329,58 @@
      WEATHER
 ===================================================== -->
 
-<section id="weather" class="dashboard-section">
+<!-- =====================================================
+     WEATHER
+===================================================== -->
 
+<section id="weather" class="dashboard-section">
 
     <div class="section-heading">
 
         <div>
-
-            <p>
-                WEATHER ASSISTANCE
-            </p>
+            <p>WEATHER ASSISTANCE</p>
 
             <h2>
                 Today's Weather 🌦️
             </h2>
-
         </div>
 
+        <button
+            class="outline-btn weather-forecast-btn"
+            onclick="openWeatherModal()">
 
-        <button class="outline-btn">
             View Forecast →
+
         </button>
 
     </div>
 
 
+    <!-- CURRENT WEATHER -->
 
     <div class="weather-card">
 
-
         <div class="current-weather">
 
-            <div class="weather-symbol">
-                ☀️
+            <div
+                class="weather-symbol"
+                id="weatherIcon">
+
+                🌤️
+
             </div>
 
             <div>
 
-                <h1>
-                    28°C
+                <h1 id="weatherTemperature">
+                    --°C
                 </h1>
 
-                <p>
-                    Partly Cloudy
+                <p id="weatherCondition">
+                    Loading weather...
                 </p>
 
-                <small>
+                <small id="weatherLocation">
                     Chennai, Tamil Nadu
                 </small>
 
@@ -383,28 +389,56 @@
         </div>
 
 
-
         <div class="weather-details">
 
             <div>
                 💧
-                <strong>68%</strong>
+                <strong id="weatherHumidity">
+                    --%
+                </strong>
                 Humidity
             </div>
 
 
             <div>
                 💨
-                <strong>14 km/h</strong>
+                <strong id="weatherWind">
+                    -- km/h
+                </strong>
                 Wind
             </div>
 
 
             <div>
                 🌧️
-                <strong>20%</strong>
+                <strong id="weatherRain">
+                    --%
+                </strong>
                 Rain
             </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FARMING ADVICE -->
+
+    <div class="weather-advice">
+
+        <div class="weather-advice-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <span>
+                SMART FARMING ADVICE
+            </span>
+
+            <p id="weatherAdvice">
+                Analyzing current weather conditions...
+            </p>
 
         </div>
 
@@ -413,321 +447,491 @@
 </section>
 
 
-
 <!-- =====================================================
-     CROP ASSISTANCE
+     WEATHER FORECAST MODAL
 ===================================================== -->
 
-<section id="crops" class="dashboard-section">
+<div
+    id="weatherModal"
+    class="weather-modal">
+
+    <div class="weather-modal-content">
+
+        <button
+            class="weather-close"
+            onclick="closeWeatherModal()">
+
+            ×
+
+        </button>
 
 
-    <div class="section-heading">
+        <!-- HEADER -->
 
-        <div>
+        <div class="weather-modal-header">
 
-            <p>
-                CROP ASSISTANCE
-            </p>
+            <div>
 
-            <h2>
-                Recommended Crops 🌾
-            </h2>
+                <span>
+                    LIVE WEATHER FORECAST
+                </span>
+
+                <h2 id="modalLocation">
+                    Chennai Weather
+                </h2>
+
+                <p>
+                    Real-time weather information
+                    for farming decisions
+                </p>
+
+            </div>
+
+
+            <div class="modal-temperature">
+
+                <div id="modalIcon">
+                    🌤️
+                </div>
+
+                <strong id="modalTemp">
+                    --°C
+                </strong>
+
+                <small id="modalCondition">
+                    Loading...
+                </small>
+
+            </div>
 
         </div>
 
 
-        <button class="outline-btn">
-            View All →
+        <!-- DETAILS -->
+
+        <div class="weather-detail-grid">
+
+            <div class="weather-detail-card">
+
+                <div>🌡️</div>
+
+                <span>
+                    Temperature
+                </span>
+
+                <strong id="detailTemp">
+                    --°C
+                </strong>
+
+            </div>
+
+
+            <div class="weather-detail-card">
+
+                <div>💧</div>
+
+                <span>
+                    Humidity
+                </span>
+
+                <strong id="detailHumidity">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="weather-detail-card">
+
+                <div>💨</div>
+
+                <span>
+                    Wind Speed
+                </span>
+
+                <strong id="detailWind">
+                    -- km/h
+                </strong>
+
+            </div>
+
+
+            <div class="weather-detail-card">
+
+                <div>🌧️</div>
+
+                <span>
+                    Rain Probability
+                </span>
+
+                <strong id="detailRain">
+                    --%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORECAST -->
+
+        <div class="forecast-title">
+
+            <h3>
+                5-Day Forecast
+            </h3>
+
+            <span>
+                Live forecast
+            </span>
+
+        </div>
+
+
+        <div
+            id="forecastContainer"
+            class="forecast-container">
+
+            <!-- JavaScript inserts forecast -->
+
+        </div>
+
+
+        <!-- FARMING RECOMMENDATION -->
+
+        <div class="farming-recommendation">
+
+            <div class="recommendation-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <span>
+                    SMART FARMING RECOMMENDATION
+                </span>
+
+                <h3>
+                    Weather-based farming guidance
+                </h3>
+
+                <p id="modalAdvice">
+                    Analyzing weather conditions...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CROP ASSISTANCE
+===================================================== -->
+<!-- =====================================================
+     BEAUTIFUL CROP ASSISTANCE
+===================================================== -->
+
+<section id="crops" class="dashboard-section crop-section">
+
+    <!-- HEADER -->
+    <div class="crop-heading">
+
+        <div>
+            <p class="section-label">CROP ASSISTANCE</p>
+
+            <h2>
+                Recommended Crops 🌱
+            </h2>
+
+            <span>
+                Smart {{ current_season }} suggestions based on the current calendar season
+            </span>
+        </div>
+
+        <button
+            type="button"
+            class="view-all-crops-btn"
+            onclick="openCropModal()">
+
+            <span>▦</span>
+            View All
+            <b>→</b>
+
         </button>
 
     </div>
 
 
+    <!-- ===============================
+         RECOMMENDED CROP CARDS
+    ================================ -->
 
-    <div class="crop-grid">
-
-
-        <div class="crop-card">
-
-            <div class="crop-image rice">
-                🌾
+    <div class="beautiful-crop-grid">
+        {% for crop in recommended_crops %}
+        <div class="beautiful-crop-card">
+            <div class="crop-picture {{ crop.key }}-picture">
+                <span class="crop-badge">✓ {{ crop.season }} Recommendation</span>
+                <div class="crop-large-icon">{{ crop.icon }}</div>
             </div>
-
-            <div class="crop-info">
-
-                <h3>
-                    Rice
-                </h3>
-
-                <p>
-                    Suitable for current soil
-                    and weather conditions.
-                </p>
-
-
-                <div class="crop-score">
-
-                    <span>
-                        Suitability
-                    </span>
-
-                    <strong>
-                        96%
-                    </strong>
-
+            <div class="beautiful-crop-content">
+                <div class="crop-title-row">
+                    <div>
+                        <h3>{{ crop.name }}</h3>
+                        <p>{{ crop.advice }}</p>
+                    </div>
+                    <span class="crop-arrow">→</span>
                 </div>
-
-
-                <div class="progress">
-
-                    <div style="width:96%"></div>
-
+                <div class="crop-tags">
+                    <span>💧 {{ crop.irrigation }}</span>
+                    <span>📅 {{ crop.season }}</span>
                 </div>
-
             </div>
-
         </div>
-
-
-
-        <div class="crop-card">
-
-            <div class="crop-image maize">
-                🌽
-            </div>
-
-            <div class="crop-info">
-
-                <h3>
-                    Maize
-                </h3>
-
-                <p>
-                    Good growth potential
-                    for this season.
-                </p>
-
-
-                <div class="crop-score">
-
-                    <span>
-                        Suitability
-                    </span>
-
-                    <strong>
-                        89%
-                    </strong>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div style="width:89%"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="crop-card">
-
-            <div class="crop-image groundnut">
-                🥜
-            </div>
-
-            <div class="crop-info">
-
-                <h3>
-                    Groundnut
-                </h3>
-
-                <p>
-                    Recommended based on
-                    soil conditions.
-                </p>
-
-
-                <div class="crop-score">
-
-                    <span>
-                        Suitability
-                    </span>
-
-                    <strong>
-                        84%
-                    </strong>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div style="width:84%"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
+        {% endfor %}
     </div>
 
 
+    <!-- =================================
+         SMART CROP ASSISTANCE
+    ================================== -->
 
-    <!-- SMART CROP FORM -->
+    <div class="smart-crop-box">
 
-    <div class="crop-form">
+        <div class="smart-crop-header">
 
-        <h2>
-            🌾 Smart Crop Assistance
-        </h2>
+            <div class="smart-crop-icon">
+                🌱
+            </div>
 
+            <div>
 
-        <p>
-            Enter your farming details to receive
-            a basic crop recommendation.
-        </p>
+                <h2>
+                    Smart Crop Assistance
+                </h2>
 
+                <p>
+                    Enter your farming details to receive
+                    a personalized recommendation.
+                </p>
 
-        <form action="/crop-recommendation"
-              method="POST">
+            </div>
 
-
-            <label for="crop">
-                Select Crop
-            </label>
-
-
-            <select id="crop"
-                    name="crop"
-                    required>
-
-                <option value="">
-                    Select Crop
-                </option>
-
-                <option value="rice">
-                    Rice
-                </option>
-
-                <option value="wheat">
-                    Wheat
-                </option>
-
-                <option value="maize">
-                    Maize
-                </option>
-
-                <option value="tomato">
-                    Tomato
-                </option>
-
-                <option value="cotton">
-                    Cotton
-                </option>
-
-            </select>
+        </div>
 
 
-
-            <label for="soil">
-                Soil Type
-            </label>
-
-
-            <select id="soil"
-                    name="soil"
-                    required>
-
-                <option value="">
-                    Select Soil
-                </option>
-
-                <option value="sandy">
-                    Sandy
-                </option>
-
-                <option value="clay">
-                    Clay
-                </option>
-
-                <option value="loamy">
-                    Loamy
-                </option>
-
-            </select>
+        <form
+            action="/crop-recommendation"
+            method="POST"
+            class="crop-form">
 
 
+            <!-- CROP -->
 
-            <label for="season">
-                Season
-            </label>
+            <div class="crop-input-card">
+
+                <div class="input-icon">
+                    🌱
+                </div>
+
+                <div class="input-content">
+
+                    <label>
+                        Crop Preference (optional)
+                    </label>
+
+                    <select
+                        name="crop"
+                        >
+
+                        <option value="">
+                            Any crop
+                        </option>
+
+                        <option value="rice">
+                            🌾 Rice
+                        </option>
+
+                        <option value="wheat">
+                            🌾 Wheat
+                        </option>
+
+                        <option value="maize">
+                            🌽 Maize
+                        </option>
+
+                        <option value="tomato">
+                            🍅 Tomato
+                        </option>
+
+                        <option value="cotton">
+                            🌿 Cotton
+                        </option>
+
+                        <option value="groundnut">
+                            🥜 Groundnut
+                        </option>
+
+                        <option value="millet">🌾 Millet</option>
+                        <option value="chickpea">🫘 Chickpea</option>
+                        <option value="pigeon_pea">🌿 Pigeon pea</option>
+                        <option value="sorghum">🌾 Sorghum</option>
+                        <option value="sugarcane">🎋 Sugarcane</option>
+                        <option value="potato">🥔 Potato</option>
+                        <option value="onion">🧅 Onion</option>
+                        <option value="soybean">🫘 Soybean</option>
+                        <option value="banana">🍌 Banana</option>
+
+                    </select>
+
+                </div>
+
+            </div>
 
 
-            <select id="season"
-                    name="season"
-                    required>
+            <!-- SOIL -->
 
-                <option value="">
-                    Select Season
-                </option>
+            <div class="crop-input-card">
 
-                <option value="kharif">
-                    Kharif
-                </option>
+                <div class="input-icon">
+                    🪨
+                </div>
 
-                <option value="rabi">
-                    Rabi
-                </option>
+                <div class="input-content">
 
-                <option value="zaid">
-                    Zaid
-                </option>
+                    <label>
+                        Soil Type
+                    </label>
 
-            </select>
+                    <select
+                        name="soil"
+                        required>
 
+                        <option value="">
+                            Select Soil
+                        </option>
 
+                        <option value="sandy">
+                            🏜️ Sandy Soil
+                        </option>
 
-            <label for="water">
-                Water Availability
-            </label>
+                        <option value="clay">
+                            🟤 Clay Soil
+                        </option>
 
+                        <option value="loamy">
+                            🌱 Loamy Soil
+                        </option>
 
-            <select id="water"
-                    name="water"
-                    required>
+                        <option value="black">
+                            ⚫ Black Soil
+                        </option>
 
-                <option value="">
-                    Select Water Availability
-                </option>
+                    </select>
 
-                <option value="low">
-                    Low
-                </option>
+                </div>
 
-                <option value="medium">
-                    Medium
-                </option>
-
-                <option value="high">
-                    High
-                </option>
-
-            </select>
+            </div>
 
 
+            <!-- SEASON -->
 
-            <button type="submit">
+            <div class="crop-input-card">
 
-                🌱 Get Recommendation
+                <div class="input-icon">
+                    📅
+                </div>
+
+                <div class="input-content">
+
+                    <label>
+                        Season
+                    </label>
+
+                    <select
+                        name="season"
+                        required>
+
+                        <option value="">
+                            Select Season
+                        </option>
+
+                        <option value="kharif">
+                            🌧️ Kharif
+                        </option>
+
+                        <option value="rabi">
+                            ❄️ Rabi
+                        </option>
+
+                        <option value="zaid">
+                            ☀️ Zaid
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- WATER -->
+
+            <div class="crop-input-card">
+
+                <div class="input-icon">
+                    💧
+                </div>
+
+                <div class="input-content">
+
+                    <label>
+                        Water Availability
+                    </label>
+
+                    <select
+                        name="water"
+                        required>
+
+                        <option value="">
+                            Select Water
+                        </option>
+
+                        <option value="low">
+                            💧 Low
+                        </option>
+
+                        <option value="medium">
+                            💧 Medium
+                        </option>
+
+                        <option value="high">
+                            💧 High
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="beautiful-recommend-btn">
+
+                <span>✨</span>
+
+                Get Recommendation
+
+                <b>→</b>
 
             </button>
-
 
         </form>
 
@@ -736,7 +940,115 @@
 </section>
 
 
+<!-- =====================================================
+     VIEW ALL CROPS MODAL
+===================================================== -->
 
+<div
+    id="cropModal"
+    class="crop-modal">
+
+    <div class="crop-modal-content">
+
+        <button
+            class="crop-modal-close"
+            onclick="closeCropModal()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-crop-header">
+
+            <span>
+                🌱
+            </span>
+
+            <div>
+
+                <p>
+                    SMART FARMER
+                </p>
+
+                <h2>
+                    All Recommended Crops
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="modal-description">
+
+            Explore crops suitable for different
+            soil, season and water conditions.
+
+        </p>
+
+
+        <div class="all-crops-grid">
+
+
+            <div class="all-crop-item">
+                <span>🌾</span>
+                <div>
+                    <h3>Rice</h3>
+                    <p>High water • Kharif</p>
+                </div>
+            </div>
+
+
+            <div class="all-crop-item">
+                <span>🌽</span>
+                <div>
+                    <h3>Maize</h3>
+                    <p>Moderate water • Kharif</p>
+                </div>
+            </div>
+
+
+            <div class="all-crop-item">
+                <span>🥜</span>
+                <div>
+                    <h3>Groundnut</h3>
+                    <p>Low–moderate water • Rabi</p>
+                </div>
+            </div>
+
+
+            <div class="all-crop-item">
+                <span>🌾</span>
+                <div>
+                    <h3>Wheat</h3>
+                    <p>Moderate water • Rabi</p>
+                </div>
+            </div>
+
+
+            <div class="all-crop-item">
+                <span>🍅</span>
+                <div>
+                    <h3>Tomato</h3>
+                    <p>Moderate irrigation</p>
+                </div>
+            </div>
+
+
+            <div class="all-crop-item">
+                <span>🌿</span>
+                <div>
+                    <h3>Cotton</h3>
+                    <p>Moderate water • Warm climate</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 <!-- =====================================================
      SMART IRRIGATION
 ===================================================== -->
@@ -1031,124 +1343,612 @@
 <!-- =====================================================
      MARKET PRICES
 ===================================================== -->
+<!-- =====================================================
+     BEAUTIFUL MARKET PRICES
+===================================================== -->
 
-<section id="market"
-         class="dashboard-section">
+<section id="market" class="dashboard-section market-section">
+
+    <!-- MARKET HEADER -->
+    <div class="market-heading">
+
+        <div class="market-title-area">
+
+            <div class="market-icon-box">
+                📈
+            </div>
+
+            <div>
+                <p class="market-label">AGRICULTURE MARKET</p>
+
+                <h2>Today's Market Prices</h2>
+
+                <span class="market-subtitle">
+                    Mandi prices for major agricultural crops
+                </span>
+            </div>
+
+        </div>
+
+        <div class="market-status" id="marketStatusBox">
+            <span class="live-dot"></span>
+            <span id="marketStatus">Updating...</span>
+        </div>
+
+    </div>
 
 
-    <div class="section-heading">
+    <!-- CROP CARDS -->
+    <div class="market-cards-grid">
 
-        <div>
+        <!-- RICE -->
+        <div class="market-price-card rice-market-card">
 
-            <p>
-                AGRICULTURE MARKET
-            </p>
+            <div class="market-card-top">
 
-            <h2>
-                Today's Market Prices 📈
-            </h2>
+                <div class="market-crop-icon rice">
+                    🌾
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Rice</h3>
+                    <span>Paddy</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="rice-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="rice-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="rice-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="rice-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="rice-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- WHEAT -->
+        <div class="market-price-card wheat-market-card">
+
+            <div class="market-card-top">
+
+                <div class="market-crop-icon wheat">
+                    🌾
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Wheat</h3>
+                    <span>Wheat Grain</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="wheat-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="wheat-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="wheat-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="wheat-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="wheat-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIZE -->
+        <div class="market-price-card maize-market-card">
+
+            <div class="market-card-top">
+
+                <div class="market-crop-icon maize">
+                    🌽
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Maize</h3>
+                    <span>Corn</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="maize-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="maize-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="maize-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="maize-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="maize-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOMATO -->
+        <div class="market-price-card tomato-market-card">
+
+            <div class="market-card-top">
+
+                <div class="market-crop-icon tomato">
+                    🍅
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Tomato</h3>
+                    <span>Fresh Tomato</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="tomato-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="tomato-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="tomato-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="tomato-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="tomato-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- COTTON -->
+        <div class="market-price-card cotton-market-card">
+
+            <div class="market-card-top">
+
+                <div class="market-crop-icon cotton">
+                    🌿
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Cotton</h3>
+                    <span>Kapas</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="cotton-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="cotton-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="cotton-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="cotton-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="cotton-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- GROUNDNUT -->
+        <div class="market-price-card groundnut-market-card">
+
+            <div class="market-card-top">
+
+                <div class="market-crop-icon groundnut">
+                    🥜
+                </div>
+
+                <div class="market-crop-name">
+                    <h3>Groundnut</h3>
+                    <span>Peanut</span>
+                </div>
+
+                <div class="market-trend">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="market-location-box">
+                <span>📍 Market</span>
+                <strong class="market-location"
+                        id="groundnut-market-location">
+                    Loading...
+                </strong>
+            </div>
+
+            <div class="modal-price-box">
+
+                <span>Modal Price</span>
+
+                <strong id="groundnut-modal">
+                    --
+                </strong>
+
+                <small>per quintal</small>
+
+            </div>
+
+            <div class="price-range">
+
+                <div>
+                    <span>Minimum</span>
+                    <strong id="groundnut-min">--</strong>
+                </div>
+
+                <div>
+                    <span>Maximum</span>
+                    <strong id="groundnut-max">--</strong>
+                </div>
+
+            </div>
+
+            <div class="market-card-footer">
+
+                <span>
+                    📅 <span id="groundnut-date">--</span>
+                </span>
+
+                <span class="crop-status">
+                    ● Market Price
+                </span>
+
+            </div>
 
         </div>
 
     </div>
 
 
+    <!-- VIEW ALL -->
+    <div class="view-all-market-container">
 
-    <div class="market-table">
+        <button
+            type="button"
+            class="view-all-market-btn"
+            onclick="openAllMarketPrices()">
 
+            <span>View All Prices</span>
 
-        <div class="market-header">
-
-            <span>
-                Crop
+            <span class="view-all-arrow">
+                →
             </span>
 
-            <span>
-                Market
+        </button>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="market-footer">
+
+        <div class="market-source">
+
+            <span class="source-icon">
+                🏛️
             </span>
 
-            <span>
-                Price
-            </span>
+            <div>
 
-            <span>
-                Trend
-            </span>
+                <strong>
+                    Government Mandi Data
+                </strong>
+
+                <small id="marketSource">
+                    Live when API key is configured; otherwise sample fallback
+                </small>
+
+            </div>
 
         </div>
 
 
+        <button
+            type="button"
+            onclick="loadMarketPrices()"
+            class="refresh-market-btn">
 
-        <div class="market-row">
+            <span>↻</span>
 
-            <span>
-                🌾 Rice
-            </span>
+            Refresh Prices
 
-            <span>
-                Koyambedu
-            </span>
-
-            <strong>
-                ₹3,200 / q
-            </strong>
-
-            <b class="up">
-                ↑ 6.2%
-            </b>
-
-        </div>
-
-
-
-        <div class="market-row">
-
-            <span>
-                🌽 Maize
-            </span>
-
-            <span>
-                Chennai
-            </span>
-
-            <strong>
-                ₹2,450 / q
-            </strong>
-
-            <b class="up">
-                ↑ 4.8%
-            </b>
-
-        </div>
-
-
-
-        <div class="market-row">
-
-            <span>
-                🥜 Groundnut
-            </span>
-
-            <span>
-                Madurai
-            </span>
-
-            <strong>
-                ₹6,100 / q
-            </strong>
-
-            <b class="down">
-                ↓ 1.2%
-            </b>
-
-        </div>
+        </button>
 
     </div>
 
 </section>
 
 
+<!-- VIEW ALL MARKET MODAL -->
 
+<div id="allMarketModal" class="all-market-modal">
+
+    <div class="all-market-overlay"
+         onclick="closeAllMarketPrices()">
+    </div>
+
+    <div class="all-market-box">
+
+        <div class="all-market-header">
+
+            <div>
+
+                <p class="market-label">
+                    AGRICULTURE MARKET
+                </p>
+
+                <h2>
+                    All Market Prices
+                </h2>
+
+                <span>
+                    Current crop price information
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="close-market-btn"
+                onclick="closeAllMarketPrices()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="all-market-table-wrapper">
+
+            <table class="all-market-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Crop</th>
+                        <th>Market</th>
+                        <th>Minimum</th>
+                        <th>Maximum</th>
+                        <th>Modal Price</th>
+                        <th>Date</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="allMarketTableBody">
+
+                    <tr>
+                        <td colspan="6">
+                            Loading market prices...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="all-market-bottom">
+
+            <span>
+                🏛️ Government of India • Agmarknet
+            </span>
+
+            <button
+                type="button"
+                onclick="closeAllMarketPrices()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 <!-- =====================================================
      GOVERNMENT SCHEMES
 ===================================================== -->
@@ -1492,15 +2292,14 @@
                     Manage your farmer account information.
                 </p>
 
-                <button
-                    type="button"
-                    class="settings-btn"
-                    onclick="showSettingMessage('Account settings are ready to edit.')">
+               <button
+    type="button"
+    class="settings-btn"
+    onclick="manageAccount()">
 
-                    Manage Account →
+    Manage Account →
 
-                </button>
-
+</button>
             </div>
 
         </div>
@@ -1593,6 +2392,9 @@
             </div>
 
         </div>
+
+
+<!-- Data & Privacy -->
 
 
 
@@ -1689,15 +2491,14 @@
                     Manage your farming information and privacy.
                 </p>
 
+<button
+    type="button"
+    class="settings-btn"
+    onclick="showPrivacy()">
 
-                <button
-                    type="button"
-                    class="settings-btn"
-                    onclick="showSettingMessage('Your data is protected by Smart Farmer.')">
+    Privacy Information →
 
-                    Privacy Information →
-
-                </button>
+</button>
 
             </div>
 
@@ -1974,36 +2775,1405 @@
 </div>
 
 
+
 <script>
 
-function openProfile() {
+/* =====================================================
+   SMART FARMER LIVE WEATHER
+===================================================== */
 
-    const modal = document.getElementById("profileModal");
+let liveWeather = null;
 
-    if (modal) {
 
-        modal.style.display = "flex";
+/* Weather code → icon + text */
 
-    } else {
+function getWeatherInfo(code) {
 
-        alert("❌ Profile modal not found!");
+    const weatherCodes = {
+
+        0: ["☀️", "Clear Sky"],
+
+        1: ["🌤️", "Mainly Clear"],
+
+        2: ["⛅", "Partly Cloudy"],
+
+        3: ["☁️", "Overcast"],
+
+        45: ["🌫️", "Foggy"],
+
+        48: ["🌫️", "Foggy"],
+
+        51: ["🌦️", "Light Drizzle"],
+
+        53: ["🌦️", "Drizzle"],
+
+        55: ["🌧️", "Heavy Drizzle"],
+
+        61: ["🌧️", "Light Rain"],
+
+        63: ["🌧️", "Rain"],
+
+        65: ["🌧️", "Heavy Rain"],
+
+        80: ["🌦️", "Rain Showers"],
+
+        81: ["🌧️", "Rain Showers"],
+
+        82: ["⛈️", "Heavy Rain Showers"],
+
+        95: ["⛈️", "Thunderstorm"],
+
+        96: ["⛈️", "Thunderstorm"],
+
+        99: ["⛈️", "Severe Thunderstorm"]
+
+    };
+
+    return weatherCodes[code] ||
+        ["🌤️", "Unknown"];
+
+}
+
+
+/* =====================================================
+   LOAD LIVE WEATHER
+===================================================== */
+
+async function loadLiveWeather() {
+
+    try {
+
+        console.log("Loading live weather...");
+
+
+        const response = await fetch(
+            "/api/weather?city=Chennai"
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Weather API failed"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "LIVE WEATHER:",
+            data
+        );
+
+
+        liveWeather = data;
+
+
+        updateWeather(data);
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Weather Error:",
+            error
+        );
+
+
+        document.getElementById(
+            "weatherCondition"
+        ).innerText =
+            "Weather unavailable";
 
     }
 
 }
 
 
-function closeProfile() {
+/* =====================================================
+   UPDATE MAIN WEATHER CARD
+===================================================== */
 
-    const modal = document.getElementById("profileModal");
+function updateWeather(data) {
 
-    if (modal) {
+    const current =
+        data.current;
 
-        modal.style.display = "none";
+    const daily =
+        data.daily;
+
+
+    const info =
+        getWeatherInfo(
+            current.weather_code
+        );
+
+
+    /* Icon */
+
+    document.getElementById(
+        "weatherIcon"
+    ).innerText =
+        info[0];
+
+
+    /* Temperature */
+
+    document.getElementById(
+        "weatherTemperature"
+    ).innerText =
+        Math.round(
+            current.temperature_2m
+        ) + "°C";
+
+
+    /* Condition */
+
+    document.getElementById(
+        "weatherCondition"
+    ).innerText =
+        info[1];
+
+
+    /* Location */
+
+    document.getElementById(
+        "weatherLocation"
+    ).innerText =
+        "📍 " +
+        data.location.city +
+        ", " +
+        data.location.state;
+
+
+    /* Humidity */
+
+    document.getElementById(
+        "weatherHumidity"
+    ).innerText =
+        current.relative_humidity_2m +
+        "%";
+
+
+    /* Wind */
+
+    document.getElementById(
+        "weatherWind"
+    ).innerText =
+        Math.round(
+            current.wind_speed_10m
+        ) +
+        " km/h";
+
+
+    /* Rain */
+
+    document.getElementById(
+        "weatherRain"
+    ).innerText =
+        daily
+        .precipitation_probability_max[0]
+        + "%";
+
+
+    /* Farming advice */
+
+    updateFarmingAdvice(data);
+
+}
+
+
+/* =====================================================
+   FARMING ADVICE
+===================================================== */
+
+function updateFarmingAdvice(data) {
+
+    const current =
+        data.current;
+
+    const rain =
+        data.daily
+        .precipitation_probability_max[0];
+
+    const temp =
+        current.temperature_2m;
+
+    const humidity =
+        current.relative_humidity_2m;
+
+
+    let advice;
+
+
+    if (rain >= 70) {
+
+        advice =
+            "🌧️ Heavy rainfall is likely. Avoid unnecessary irrigation and check field drainage.";
+
+    }
+
+    else if (rain >= 40) {
+
+        advice =
+            "🌦️ Moderate rainfall is expected. Monitor soil moisture before irrigation.";
+
+    }
+
+    else if (temp >= 35) {
+
+        advice =
+            "🌡️ High temperature detected. Irrigate during cooler hours and monitor crops for heat stress.";
+
+    }
+
+    else if (humidity >= 80) {
+
+        advice =
+            "💧 High humidity detected. Monitor crops for fungal diseases and avoid excessive irrigation.";
+
+    }
+
+    else {
+
+        advice =
+            "🌱 Weather conditions are favorable for farming activities. Regular crop monitoring is recommended.";
+
+    }
+
+
+    document.getElementById(
+        "weatherAdvice"
+    ).innerText =
+        advice;
+
+
+    document.getElementById(
+        "modalAdvice"
+    ).innerText =
+        advice;
+
+}
+
+
+/* =====================================================
+   OPEN FORECAST
+===================================================== */
+
+function openWeatherModal() {
+
+    document
+        .getElementById(
+            "weatherModal"
+        )
+        .classList.add("show");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    if (liveWeather) {
+
+        updateForecast(
+            liveWeather
+        );
 
     }
 
 }
+
+
+/* =====================================================
+   CLOSE FORECAST
+===================================================== */
+
+function closeWeatherModal() {
+
+    document
+        .getElementById(
+            "weatherModal"
+        )
+        .classList.remove("show");
+
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+/* =====================================================
+   UPDATE MODAL
+===================================================== */
+
+function updateForecast(data) {
+
+    const current =
+        data.current;
+
+    const daily =
+        data.daily;
+
+
+    const info =
+        getWeatherInfo(
+            current.weather_code
+        );
+
+
+    /* Header */
+
+    document.getElementById(
+        "modalLocation"
+    ).innerText =
+        data.location.city +
+        " Weather";
+
+
+    document.getElementById(
+        "modalIcon"
+    ).innerText =
+        info[0];
+
+
+    document.getElementById(
+        "modalTemp"
+    ).innerText =
+        Math.round(
+            current.temperature_2m
+        ) + "°C";
+
+
+    document.getElementById(
+        "modalCondition"
+    ).innerText =
+        info[1];
+
+
+    /* Details */
+
+    document.getElementById(
+        "detailTemp"
+    ).innerText =
+        Math.round(
+            current.temperature_2m
+        ) + "°C";
+
+
+    document.getElementById(
+        "detailHumidity"
+    ).innerText =
+        current.relative_humidity_2m
+        + "%";
+
+
+    document.getElementById(
+        "detailWind"
+    ).innerText =
+        Math.round(
+            current.wind_speed_10m
+        ) + " km/h";
+
+
+    document.getElementById(
+        "detailRain"
+    ).innerText =
+        daily
+        .precipitation_probability_max[0]
+        + "%";
+
+
+    /* 5 day forecast */
+
+    const container =
+        document.getElementById(
+            "forecastContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    for (
+        let i = 0;
+        i < daily.time.length;
+        i++
+    ) {
+
+        const date =
+            new Date(
+                daily.time[i]
+            );
+
+
+        let dayName;
+
+
+        if (i === 0) {
+
+            dayName = "Today";
+
+        }
+
+        else {
+
+            dayName =
+                date.toLocaleDateString(
+                    "en-US",
+                    {
+                        weekday: "short"
+                    }
+                );
+
+        }
+
+
+        const weatherInfo =
+            getWeatherInfo(
+                daily.weather_code[i]
+            );
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "forecast-item";
+
+
+        if (i === 0) {
+
+            card.classList.add(
+                "today"
+            );
+
+        }
+
+
+        card.innerHTML = `
+
+            <div class="forecast-day">
+                ${dayName}
+            </div>
+
+            <div class="forecast-icon">
+                ${weatherInfo[0]}
+            </div>
+
+            <div class="forecast-temp">
+                ${Math.round(
+                    daily.temperature_2m_max[i]
+                )}°
+            </div>
+
+            <div class="forecast-min">
+                Low:
+                ${Math.round(
+                    daily.temperature_2m_min[i]
+                )}°
+            </div>
+
+            <div class="forecast-rain">
+                🌧️
+                ${daily.precipitation_probability_max[i]}%
+            </div>
+
+        `;
+
+
+        container.appendChild(
+            card
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById(
+                "weatherModal"
+            );
+
+
+        if (
+            event.target === modal
+        ) {
+
+            closeWeatherModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeWeatherModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START WEATHER
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadLiveWeather();
+
+    }
+);
+
+</script>
+<script>
+
+/* =====================================================
+   CROP ASSISTANCE JAVASCRIPT
+===================================================== */
+
+
+/* ================================
+   OPEN VIEW ALL MODAL
+================================ */
+
+function openCropModal() {
+
+    const modal = document.getElementById("cropModal");
+
+    if (modal) {
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+    }
+
+}
+
+
+/* ================================
+   CLOSE MODAL
+================================ */
+
+function closeCropModal() {
+
+    const modal = document.getElementById("cropModal");
+
+    if (modal) {
+        modal.classList.remove("show");
+        document.body.style.overflow = "";
+    }
+
+}
+
+
+/* ================================
+   CLICK OUTSIDE MODAL
+================================ */
+
+document.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("cropModal");
+
+    if (
+        modal &&
+        event.target === modal
+    ) {
+        closeCropModal();
+    }
+
+});
+
+
+/* ================================
+   ESCAPE KEY
+================================ */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeCropModal();
+    }
+
+});
+
+
+/* ================================
+   FORM LOADING EFFECT
+================================ */
+
+const cropForm =
+    document.querySelector(".crop-form");
+
+if (cropForm) {
+
+    cropForm.addEventListener("submit", function() {
+
+        const button =
+            cropForm.querySelector(
+                ".beautiful-recommend-btn"
+            );
+
+        if (button) {
+
+            button.innerHTML =
+                '<span>⏳</span> Analyzing Conditions...';
+
+            button.style.pointerEvents = "none";
+            button.style.opacity = "0.8";
+
+        }
+
+    });
+
+}
+
+</script>
+<script>
+
+let latestMarketData = {};
+
+
+/* =========================================================
+   LOAD MARKET PRICES
+   ========================================================= */
+
+async function loadMarketPrices() {
+
+    const status =
+        document.getElementById("marketStatus");
+
+    const statusBox =
+        document.getElementById("marketStatusBox");
+
+    const source =
+        document.getElementById("marketSource");
+
+
+    try {
+
+        if (status) {
+            status.textContent = "Updating...";
+        }
+
+        if (statusBox) {
+            statusBox.classList.remove(
+                "demo-status",
+                "error-status"
+            );
+        }
+
+
+        const response = await fetch(
+            "/api/market-prices",
+            {
+                cache: "no-store"
+            }
+        );
+
+
+        const result = await response.json();
+
+        console.log(
+            "MARKET API RESPONSE:",
+            result
+        );
+
+
+        const data = result.data || {};
+
+        latestMarketData = data;
+
+
+        const crops = [
+            "rice",
+            "wheat",
+            "maize",
+            "tomato",
+            "cotton",
+            "groundnut"
+        ];
+
+
+        crops.forEach(function(crop) {
+
+            const cropData =
+                data[crop] &&
+                data[crop].length
+                    ? data[crop][0]
+                    : null;
+
+            updateMarketRow(
+                crop,
+                cropData
+            );
+
+        });
+
+
+        /*
+         * Update status
+         */
+
+        if (result.demo === true) {
+    if (status) {
+        status.textContent = "Market Prices";
+    }
+
+    if (statusBox) {
+        statusBox.classList.add("demo-status");
+    }
+
+    if (source) {
+        source.textContent = "Sample market price data";
+    }
+} else {
+    if (status) {
+        status.textContent = "Government Data";
+    }
+
+    if (source) {
+        source.textContent = "Government of India • Agmarknet";
+    }
+}
+
+        /*
+         * If View All is already open,
+         * refresh its table too.
+         */
+
+        const modal =
+            document.getElementById(
+                "allMarketModal"
+            );
+
+        if (
+            modal &&
+            modal.classList.contains("active")
+        ) {
+            renderAllMarketPrices();
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "MARKET ERROR:",
+            error
+        );
+
+
+        if (status) {
+            status.textContent =
+                "Unavailable";
+        }
+
+        if (statusBox) {
+            statusBox.classList.add(
+                "error-status"
+            );
+        }
+
+        if (source) {
+            source.textContent =
+                "Government market service unavailable";
+        }
+
+
+        const crops = [
+            "rice",
+            "wheat",
+            "maize",
+            "tomato",
+            "cotton",
+            "groundnut"
+        ];
+
+
+        crops.forEach(function(crop) {
+            setMarketUnavailable(crop);
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   UPDATE CARD
+   ========================================================= */
+
+function updateMarketRow(crop, item) {
+
+    if (!item) {
+
+        setMarketUnavailable(crop);
+
+        return;
+    }
+
+
+    const locationElement =
+        document.getElementById(
+            crop + "-market-location"
+        );
+
+    const minElement =
+        document.getElementById(
+            crop + "-min"
+        );
+
+    const maxElement =
+        document.getElementById(
+            crop + "-max"
+        );
+
+    const modalElement =
+        document.getElementById(
+            crop + "-modal"
+        );
+
+    const dateElement =
+        document.getElementById(
+            crop + "-date"
+        );
+
+    const trendElement =
+        document.querySelector(
+            "." + crop + "-market-card .market-trend"
+        );
+
+
+    const market =
+        item.market ||
+        item.Market ||
+        "--";
+
+
+    const minPrice =
+        item.min_price ??
+        item.minPrice ??
+        item.min ??
+        "--";
+
+
+    const maxPrice =
+        item.max_price ??
+        item.maxPrice ??
+        item.max ??
+        "--";
+
+
+    const modalPrice =
+        item.modal_price ??
+        item.modalPrice ??
+        item.modal ??
+        "--";
+
+
+    const date =
+        item.date ??
+        item.arrival_date ??
+        item.arrivalDate ??
+        "--";
+
+
+    if (locationElement) {
+        locationElement.textContent =
+            market;
+    }
+
+    if (minElement) {
+        minElement.textContent =
+            formatPrice(minPrice);
+    }
+
+    if (maxElement) {
+        maxElement.textContent =
+            formatPrice(maxPrice);
+    }
+
+    if (modalElement) {
+        modalElement.textContent =
+            formatPrice(modalPrice);
+    }
+
+    if (dateElement) {
+        dateElement.textContent =
+            date;
+    }
+
+    if (trendElement) {
+        const change = Number(item.change_percent);
+        if (Number.isFinite(change)) {
+            const arrow = change > 0 ? "↑" : change < 0 ? "↓" : "→";
+            trendElement.textContent = `${arrow} ${Math.abs(change).toFixed(2)}%`;
+            trendElement.title = "Compared with the previous available market date";
+        } else {
+            trendElement.textContent = "--";
+            trendElement.title = "Historical comparison unavailable";
+        }
+    }
+
+}
+
+
+/* =========================================================
+   FORMAT PRICE
+   ========================================================= */
+
+function formatPrice(value) {
+
+    if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        value === "--"
+    ) {
+        return "--";
+    }
+
+
+    const number =
+        Number(
+            String(value)
+                .replace(/,/g, "")
+        );
+
+
+    if (Number.isNaN(number)) {
+        return "--";
+    }
+
+
+    return "₹" +
+        number.toLocaleString("en-IN");
+
+}
+
+
+/* =========================================================
+   UNAVAILABLE
+   ========================================================= */
+
+function setMarketUnavailable(crop) {
+
+    const locationElement =
+        document.getElementById(
+            crop + "-market-location"
+        );
+
+    const minElement =
+        document.getElementById(
+            crop + "-min"
+        );
+
+    const maxElement =
+        document.getElementById(
+            crop + "-max"
+        );
+
+    const modalElement =
+        document.getElementById(
+            crop + "-modal"
+        );
+
+    const dateElement =
+        document.getElementById(
+            crop + "-date"
+        );
+
+
+    if (locationElement) {
+        locationElement.textContent =
+            "Unavailable";
+    }
+
+    if (minElement) {
+        minElement.textContent =
+            "--";
+    }
+
+    if (maxElement) {
+        maxElement.textContent =
+            "--";
+    }
+
+    if (modalElement) {
+        modalElement.textContent =
+            "--";
+    }
+
+    if (dateElement) {
+        dateElement.textContent =
+            "--";
+    }
+
+}
+
+
+/* =========================================================
+   VIEW ALL
+   ========================================================= */
+
+function openAllMarketPrices() {
+
+    const modal =
+        document.getElementById(
+            "allMarketModal"
+        );
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    renderAllMarketPrices();
+
+
+    modal.classList.add("active");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE VIEW ALL
+   ========================================================= */
+
+function closeAllMarketPrices() {
+
+    const modal =
+        document.getElementById(
+            "allMarketModal"
+        );
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    modal.classList.remove("active");
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   RENDER ALL MARKET PRICES
+   ========================================================= */
+
+function renderAllMarketPrices() {
+
+    const tableBody =
+        document.getElementById(
+            "allMarketTableBody"
+        );
+
+
+    if (!tableBody) {
+        return;
+    }
+
+
+    const crops = [
+
+        {
+            key: "rice",
+            name: "Rice",
+            type: "Paddy",
+            icon: "🌾"
+        },
+
+        {
+            key: "wheat",
+            name: "Wheat",
+            type: "Wheat Grain",
+            icon: "🌾"
+        },
+
+        {
+            key: "maize",
+            name: "Maize",
+            type: "Corn",
+            icon: "🌽"
+        },
+
+        {
+            key: "tomato",
+            name: "Tomato",
+            type: "Fresh Tomato",
+            icon: "🍅"
+        },
+
+        {
+            key: "cotton",
+            name: "Cotton",
+            type: "Kapas",
+            icon: "🌿"
+        },
+
+        {
+            key: "groundnut",
+            name: "Groundnut",
+            type: "Peanut",
+            icon: "🥜"
+        }
+
+    ];
+
+
+    let html = "";
+
+
+    crops.forEach(function(crop) {
+
+        const records =
+            latestMarketData[
+                crop.key
+            ] || [];
+
+
+        if (records.length === 0) {
+
+            html += `
+
+                <tr>
+
+                    <td>
+
+                        <div class="all-crop-name">
+
+                            <div class="all-crop-icon">
+                                ${crop.icon}
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ${crop.name}
+                                </strong>
+
+                                <small>
+                                    ${crop.type}
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Unavailable
+                    </td>
+
+                    <td>--</td>
+
+                    <td>--</td>
+
+                    <td class="all-modal-price">
+                        --
+                    </td>
+
+                    <td>--</td>
+
+                </tr>
+
+            `;
+
+            return;
+        }
+
+
+        /*
+         * Show every market record
+         */
+
+        records.forEach(function(item) {
+
+            const market =
+                item.market ||
+                item.Market ||
+                "--";
+
+
+            const minPrice =
+                item.min_price ??
+                item.minPrice ??
+                item.min ??
+                "--";
+
+
+            const maxPrice =
+                item.max_price ??
+                item.maxPrice ??
+                item.max ??
+                "--";
+
+
+            const modalPrice =
+                item.modal_price ??
+                item.modalPrice ??
+                item.modal ??
+                "--";
+
+
+            const today = new Date();
+
+const todayDate = today.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+});
+
+const date =
+    item.date && item.date !== "Demo"
+        ? item.date
+        : todayDate;
+
+
+            html += `
+
+                <tr>
+
+                    <td>
+
+                        <div class="all-crop-name">
+
+                            <div class="all-crop-icon">
+                                ${crop.icon}
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ${crop.name}
+                                </strong>
+
+                                <small>
+                                    ${crop.type}
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        ${market}
+                    </td>
+
+                    <td>
+                        ${formatPrice(minPrice)}
+                    </td>
+
+                    <td>
+                        ${formatPrice(maxPrice)}
+                    </td>
+
+                    <td class="all-modal-price">
+                        ${formatPrice(modalPrice)}
+                    </td>
+
+                    <td>
+                        ${date}
+                    </td>
+
+                </tr>
+
+            `;
+
+        });
+
+    });
+
+
+    tableBody.innerHTML = html;
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL WITH ESC
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeAllMarketPrices();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadMarketPrices();
+
+    }
+);
+
+
+/* =========================================================
+   AUTO REFRESH - 15 MINUTES
+   ========================================================= */
+
+setInterval(
+    loadMarketPrices,
+    15 * 60 * 1000
+);
 
 </script>
 </body>
